@@ -6,7 +6,7 @@ def days_to_units(num_of_days):
 
 def validate_execute():
    try:
-     user_num = int(user_input)
+     user_num = int(days)
      if user_num > 0:
         calc_value = days_to_units(user_num)
         print(calc_value)
@@ -18,5 +18,10 @@ def validate_execute():
    except ValueError:
       print("Invalid value!!")
 
-user_input = input("Enter hours to convert to days!\n")
-validate_execute()
+user_input = ""
+while user_input != "exit":
+    user_input = input("Enter number of days !\n")
+    list_of_days = user_input.split(", ")
+    print(type(set(list_of_days)))
+    for days in set(list_of_days):
+        validate_execute()
